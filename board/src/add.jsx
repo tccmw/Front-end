@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import {useForm} from "react-hook-form";
 
 const Add = () =>{
 const [form, setform] = useState({
@@ -10,11 +11,22 @@ const [form, setform] = useState({
   userDetail:'',
 });
 
+const {register, watch} = useForm();
+
+  console.log(watch('userName'))
+
+const nav = useNavigate();
+
+  const handleClick = () => {
+    if(form.userName !== "" && form.userTitle !== "" && form.userDetail !== ""){
+      nav('/boardR');
+    }
+  }
+
   return(
     <Body>
       <Main>
         <Header>게시판</Header>
-        <form>
           <Name>
             <legend>
               이름
@@ -24,6 +36,7 @@ const [form, setform] = useState({
               value={form.userName}
               placeholder="이름을 입력하세요"
               onChange={e => setform({...form, userName: e.target.value})}
+              required
               >
               </NameInput>
             </legend>
@@ -44,21 +57,21 @@ const [form, setform] = useState({
           </Title>
           <Detail>
             내용
-            <legend>
+            <Legend>
               <DetailInput
               type="text"
               name="userDetail"
               value={form.userDetail}
               placeholder="내용을 입력하세요"
               onChange={e => setform({...form, userDetail: e.target.value})}
+              required
               >
               </DetailInput>
-            </legend>
+            </Legend>
           </Detail>
           <Button>
-            <ButtonC type="submit"><Link to="/" style={{ textDecoration: "none"}}><ButtonFont>작성</ButtonFont></Link></ButtonC>
+            <ButtonC onClick={handleClick}><ButtonFont>작성</ButtonFont></ButtonC>
           </Button>
-        </form>
       </Main>
     </Body>
   );
@@ -145,12 +158,17 @@ const Detail = styled.div`
 const DetailInput = styled.input`
   margin-left: 20px;
   display: block;
-  width: 750px;
+  width: 100%;
   height: 100%;
   border-radius: 5px;
   border: 1px solid #ccc;
   outline: none;
   box-shadow: 0px 8px 6px -6px #f3e8e8
+`;
+
+const Legend = styled.legend`
+  height: 100%;
+  width: 80%;
 `;
 
 const Button = styled.div`

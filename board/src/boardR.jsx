@@ -9,7 +9,7 @@ const BoardReact = () =>{
       <Chlid>게시판</Chlid>
     </Main>
     <Footer>
-      <Button><Link to="/Add" style={{ textDecoration: "none"}}>
+      <Button><Link to="/add" style={{ textDecoration: "none"}}>
         <RouteFont>추가</RouteFont>
       </Link></Button>    
     </Footer>
@@ -61,5 +61,4 @@ const Button = styled.button`
 
 const RouteFont = styled.div`
   color: #fff;
-  
 `;
