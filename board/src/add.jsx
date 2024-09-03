@@ -11,15 +11,17 @@ const [form, setform] = useState({
   userDetail:'',
 });
 
-const {register, watch} = useForm();
+const [name, setName] = useState("");
 
-  console.log(watch('userName'))
+const onChange = (e) =>{
+  setform(e.target.value);
+}
 
 const nav = useNavigate();
 
   const handleClick = () => {
     if(form.userName !== "" && form.userTitle !== "" && form.userDetail !== ""){
-      nav('/boardR');
+      nav('/');
     }
   }
 
@@ -35,7 +37,7 @@ const nav = useNavigate();
               name="userName"
               value={form.userName}
               placeholder="이름을 입력하세요"
-              onChange={e => setform({...form, userName: e.target.value})}
+              onChange={onChange}
               required
               >
               </NameInput>
@@ -83,7 +85,7 @@ const Body = styled.div`
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -14,7 +14,7 @@ const BoardReact = () =>{
       </Link></Button>    
     </Footer>
     </>
-  )
+  );
 }
 
 export default BoardReact;
@@ -23,7 +23,7 @@ const Main = styled.div`
   padding: 0px;
   margin: 0px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 `;
 
 const Chlid = styled.div`
