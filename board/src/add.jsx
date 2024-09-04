@@ -2,26 +2,45 @@ import React from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import {useForm} from "react-hook-form";
+// import { useNavigate } from "react-router-dom";
 
 const Add = () =>{
 const [form, setform] = useState({
   userName: '',
-  userTitle:'',
-  userDetail:'',
+});
+
+const navigate = useNavigate();
+
+const [title, setTitle] = useState({
+  userTitle: '',
+});
+
+const [detail, setDetail] = useState({
+  userDetail: '',
 });
 
 const [name, setName] = useState("");
 
-const onChange = (e) =>{
+const onChange = e =>{
   setform(e.target.value);
+  console.log(e.target.value);
+}
+
+const onTitle = e =>{
+  setTitle(e.target.value);
+  console.log(e.target.value);
+}
+
+const onDetail = e =>{
+  setDetail(e.target.value);
+  console.log(e.target.value);
 }
 
 const nav = useNavigate();
 
   const handleClick = () => {
     if(form.userName !== "" && form.userTitle !== "" && form.userDetail !== ""){
-      nav('/');
+      nav('/'/*,{state:{setName}}*/);
     }
   }
 
@@ -49,9 +68,9 @@ const nav = useNavigate();
               <TitleInput
               type="text"
               name="userTitle"
-              value={form.userTitle}
+              value={title.userTitle}
               placeholder="제목을 입력하세요"
-              onChange={e => setform({...form, userTitle: e.target.value})}
+              onChange={onTitle}
               required
               >
               </TitleInput>
@@ -63,9 +82,9 @@ const nav = useNavigate();
               <DetailInput
               type="text"
               name="userDetail"
-              value={form.userDetail}
+              value={detail.userDetail}
               placeholder="내용을 입력하세요"
-              onChange={e => setform({...form, userDetail: e.target.value})}
+              onChange={onDetail}
               required
               >
               </DetailInput>
@@ -85,7 +104,7 @@ const Body = styled.div`
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;

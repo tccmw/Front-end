@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 const BoardReact = () =>{
+ /* const userName = location.state.userName;
+  let location = useLocation();*/
   return(
     <>
     <Main>
@@ -23,7 +26,7 @@ const Main = styled.div`
   padding: 0px;
   margin: 0px;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 `;
 
 const Chlid = styled.div`
