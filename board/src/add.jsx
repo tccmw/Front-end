@@ -2,14 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
 
 const Add = () =>{
 const [form, setform] = useState({
   userName: '',
 });
-
-const navigate = useNavigate();
 
 const [title, setTitle] = useState({
   userTitle: '',
@@ -39,8 +36,8 @@ const onDetail = e =>{
 const nav = useNavigate();
 
   const handleClick = () => {
-    if(form.userName !== "" && form.userTitle !== "" && form.userDetail !== ""){
-      nav('/'/*,{state:{setName}}*/);
+    if(form.userName !== "" && title.userTitle !== "" && detail.userDetail !== ""){
+      nav('/',{state:{name}});
     }
   }
 
@@ -116,6 +113,10 @@ const Main = styled.div`
   height: 80%;
   border-radius: 15px;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   `;
 
 const Header = styled.div`
@@ -125,7 +126,7 @@ const Header = styled.div`
   justify-content: center;
   align-items: center;
   font-weight:bold;
-  font-size: 20px;
+  font-size: 30px;
   border-radius: 15px 15px 0 0;
 `;
 

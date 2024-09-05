@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const BoardReact = () =>{
- /* const userName = location.state.userName;
-  let location = useLocation();*/
   return(
     <>
     <Main>
