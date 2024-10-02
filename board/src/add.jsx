@@ -16,8 +16,6 @@ const [detail, setDetail] = useState({
   userDetail: '',
 });
 
-const [name, setName] = useState("");
-
 const onChange = e =>{
   setform(e.target.value);
   console.log(e.target.value);
@@ -37,7 +35,7 @@ const nav = useNavigate();
 
   const handleClick = () => {
     if(form.userName !== "" && title.userTitle !== "" && detail.userDetail !== ""){
-      nav('/',{state:{name}});
+      nav('/');
     }
   }
 
@@ -60,8 +58,8 @@ const nav = useNavigate();
             </legend>
           </Name>
           <Title>
-            제목
             <legend>
+            제목
               <TitleInput
               type="text"
               name="userTitle"
