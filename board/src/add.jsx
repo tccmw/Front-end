@@ -12,6 +12,7 @@ const [title, setTitle] = useState({
   userTitle: '',
 });
 
+//유저디테일
 const [detail, setDetail] = useState({
   userDetail: '',
 });
