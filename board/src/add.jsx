@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-//유저 네임
 const Add = () =>{
 const [form, setform] = useState({
   userName: '',
@@ -13,7 +12,6 @@ const [title, setTitle] = useState({
   userTitle: '',
 });
 
-//유저디테일
 const [detail, setDetail] = useState({
   userDetail: '',
 });
