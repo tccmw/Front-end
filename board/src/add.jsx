@@ -38,7 +38,6 @@ const nav = useNavigate();
       nav('/');
     }
   }
-
   return(
     <Body>
       <Main>
