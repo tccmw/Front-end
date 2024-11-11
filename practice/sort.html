@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>ㅎㅇ</h2>
+    <script>
+      let arr = ["b", "a", "c"];
+      arr.sort();
+      console.log(arr);
+
+      let arr1 = [10, 3, 5];
+      arr1.sort((a, b) => {
+        if (a > b) {
+          //B가 A 앞으로 와라
+          return 1;
+        } else if (a < b) {
+          //A가 B 앞으로 와라
+          return -1;
+        } else {
+          //멈춰라
+          return 0;
+        }
+      });
+      console.log(arr1);
+    </script>
+  </body>
+</html>
